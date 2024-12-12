@@ -1,0 +1,10 @@
+# The following four lines of boilerplate have to be in your project's CMakeLists
+# in this exact order for cmake to work correctly
+cmake_minimum_required(VERSION 3.16)
+
+set(CMAKE_COMPILE_WARNING_AS_ERROR ON)
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(mqtt_ssl)
+
+target_add_binary_data(mqtt_ssl.elf "main/isrgrootx1.pem" TEXT)
